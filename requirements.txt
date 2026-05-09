@@ -1,9 +1,9 @@
-# FastAPI and ASGI server (using older version with stable pydantic)
+# FastAPI and ASGI server (using compatible versions)
 fastapi==0.100.1
 uvicorn[standard]==0.23.2
 
-# Data validation and serialization (using version with pre-compiled wheels)
-pydantic==1.10.13
+# Data validation and serialization (using compatible version)
+pydantic==1.10.12
 
 # HTTP client for testing (optional but recommended)
 httpx==0.24.1
