@@ -1,0 +1,21 @@
+# Render deployment configuration for Python (non-Docker)
+# This file tells Render how to deploy your FastAPI application using Python runtime
+
+services:
+  # Web service configuration
+  - type: web
+    name: fastapi-backend
+    env: python  # Use Python runtime instead of Docker
+    plan: free   # Use free tier for testing, upgrade to starter for production
+    healthCheckPath: /health  # Health check endpoint for monitoring
+    autoDeploy: true  # Automatically deploy on git push
+    
+    # Python-specific configuration
+    pythonVersion: 3.11
+    buildCommand: "pip install -r requirements.txt"  # Install dependencies
+    startCommand: "uvicorn main:app --host 0.0.0.0 --port $PORT"  # Start command
+    
+    # Environment variables
+    envVars:
+      - key: PORT
+        value: 8000

@@ -1,0 +1,9 @@
+# FastAPI and ASGI server
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+
+# Data validation and serialization
+pydantic==2.5.0
+
+# HTTP client for testing (optional but recommended)
+httpx==0.25.2
